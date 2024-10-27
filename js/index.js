@@ -8,6 +8,7 @@ renderTasksList();
 
 function renderTasksList(){
   let tasksHTML = "";
+  let isEmpty = true;
 
   for(let i = 0; i < tasksList.length; i++){
     const taskObject = tasksList[i];
@@ -25,6 +26,14 @@ function renderTasksList(){
     tasksHTML += html;
   }
   document.querySelector('.js-tasks').innerHTML = tasksHTML;
+
+  if(tasksList.length > 0){
+    isEmpty = false;
+    document.querySelector('.default-tasks').style.display = "none";
+  }else{
+    isEmpty = true;
+    document.querySelector('.default-tasks').style.display = "flex";
+  }
 }
 function addToInput(){
   const inputElement = document.querySelector('.task-input');
