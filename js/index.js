@@ -1,7 +1,4 @@
-const tasksList = [{
-  name: "Eg. Hire an employee",
-  dueDate: "Eg. 2024-10-27"
-}];
+const tasksList = JSON.parse(localStorage.getItem('tasksList'));
 
 renderTasksList();
 
@@ -15,7 +12,8 @@ function renderTasksList(){
       <p>
         ${name} ${dueDate}
         <button onclick="
-          tasksList.splice(${i}, 1); 
+          tasksList.splice(${i}, 1);
+          saveTasksToLocalStorage();
           renderTasksList();
         ">Delete</button>
       </p>
@@ -36,15 +34,18 @@ function addToInput(){
       name,
       dueDate: date
     });
+    saveTasksToLocalStorage();
     renderTasksList();  
     inputElement.value = '';
   }
-
   if(name === ""){
-    alert("No name");
+    alert("Please input tasks");
   }else if(!dueDate){
     pushDataToArray("No due date");
   }else{
     pushDataToArray(dueDate);
   }
+}
+function saveTasksToLocalStorage() {
+  localStorage.setItem('tasksList', JSON.stringify(tasksList));
 }
