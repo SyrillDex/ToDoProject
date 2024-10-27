@@ -1,4 +1,7 @@
-const tasksList = JSON.parse(localStorage.getItem('tasksList'));
+const tasksList = JSON.parse(localStorage.getItem('tasksList')) || [{
+  name: "Eg. Hire an employee",
+  dueDate: "Eg. 2024-10-27"
+}];
 
 renderTasksList();
 
