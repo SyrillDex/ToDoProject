@@ -1,4 +1,4 @@
-const tasksList = JSON.parse(localStorage.getItem('tasksList'));
+let tasksList = JSON.parse(localStorage.getItem('tasksList'));
 
 if (tasksList === null){
   tasksList = [{
