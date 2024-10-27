@@ -1,6 +1,6 @@
 const tasksList = [{
-  name: "Tasks will be displayed here",
-  dueDate: "Due date"
+  name: "Eg. Hire an employee",
+  dueDate: "Eg. 2024-10-27"
 }];
 
 renderTasksList();
@@ -28,13 +28,23 @@ function addToInput(){
   const inputElement = document.querySelector('.task-input');
   const name = inputElement.value;
 
-  const dateDateInput = document.querySelector('.js-duedate-input');
-  const dueDate = dateDateInput.value;
+  const dateInput = document.querySelector('.js-duedate-input');
+  const dueDate = dateInput.value;
 
-  tasksList.push({
-    name,
-    dueDate
-  });
-  renderTasksList();  
-  inputElement.value = '';
+  function pushDataToArray(date){
+    tasksList.push({
+      name,
+      dueDate: date
+    });
+    renderTasksList();  
+    inputElement.value = '';
+  }
+
+  if(name === ""){
+    alert("No name");
+  }else if(!dueDate){
+    pushDataToArray("No due date");
+  }else{
+    pushDataToArray(dueDate);
+  }
 }
