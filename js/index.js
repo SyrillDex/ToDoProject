@@ -7,21 +7,32 @@ let tasksList = JSON.parse(localStorage.getItem('tasksList')) || [{
 renderTasksList();
 
 function renderTasksList(){
-  let tasksHTML = "";
+  let tasksHTML = `
+    <div class="default-tasks">
+      No tasks to show
+    </div>
+  `;
   let isEmpty = true;
 
   for(let i = 0; i < tasksList.length; i++){
     const taskObject = tasksList[i];
     const { name, dueDate, time} = taskObject;
     const html = `
-      <p>
-        ${name} ${dueDate} ${time}
-        <button onclick="
+      <div class="tasks">
+        <div>
+          <input type="checkbox" name="taskName" id="taskName">
+          <label for="taskName">${name}</label>
+        </div>
+        <div> ${dueDate} </div>
+        <div> ${time} </div>
+        <div>
+          <button onclick="
           tasksList.splice(${i}, 1);
           saveTasksToLocalStorage();
           renderTasksList();
-        ">Delete</button>
-      </p>
+          ">Delete</button>
+        </div>
+      </div>
       `;
     tasksHTML += html;
   }
