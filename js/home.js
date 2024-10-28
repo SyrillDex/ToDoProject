@@ -100,10 +100,11 @@ function editTask(index){
 }
 function welcomeUser(){
   let welcomeUser = JSON.parse(localStorage.getItem('username')) || "Guest";
-  let welcomeHTML = `<a href="index.html">Edit username</a>` ;
+  let welcomeHTML = `` ;
   
   const html = `
-    <h1>Welcome to ${welcomeUser}'s To do List</h1>
+    <a href="index.html"><i class="fa-solid fa-user-pen"></i></a>
+    <h1>Welcome to <em>${welcomeUser}'s</em> To do List</h1>
   `;
   welcomeHTML += html;
   

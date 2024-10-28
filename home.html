@@ -3,15 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" 
+  rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <title>To Do List with JavaScript</title>
   <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
   <div class="welcome-mess"></div>
-  <input placeholder="Your task here" class="task-input" maxlength="50">
-  <input type="date" class="js-duedate-input">
-  <input type="time" class="js-time-input">
-  <button onclick="addToInput();">Add</button>
+  <div class="task-input-div">
+    <input placeholder="Your task here" class="task-input" maxlength="50">
+    <input type="date" class="js-duedate-input">
+    <input type="time" class="js-time-input">
+  </div>
+  <div class="task-input-buttons">
+    <button onclick="addToInput();">Add</button>
+    <button>Clear all</button>
+  </div>
   <h2>Tasks</h2>
   <div class="js-tasks">
   </div>

@@ -3,7 +3,9 @@
   padding: 0;
 }
 body{
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #121212;
+  font-family: Montserrat, Arial;
+  color: white;
 }
 .default-tasks{
   display: flex;
@@ -11,8 +13,54 @@ body{
   justify-content: center;
   margin: 20px;
   height: 300px;
-  border: 1px solid gray;
+  border: 1px solid white;
   border-radius: 10px;
+}
+.welcome-mess{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+.welcome-mess h1{
+  font-weight: lighter;
+}
+.welcome-mess a{
+  position: absolute;
+  color: white;
+  font-size: 1.1rem;
+  left: 15px;
+  bottom: 25px;
+}
+.welcome-mess em{
+  color: #97dbf4;
+}
+.task-input-div{
+  display: flex;
+  margin: 15px;
+  gap: 5px;
+}
+/* @media (max-width: 400px){
+  .task-input-div{
+    flex-direction: column;
+  }
+} */
+.task-input-div input{
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 8px 10px;
+  border-radius: 10px 10px 0px 0px;
+  color: white;
+}
+.task-input-div input:nth-child(1){
+  width: 80%;
+}
+.task-input-buttons{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
 }
 .tasks{
   display: grid;
@@ -30,13 +78,15 @@ body{
 }
 .tasks p:nth-child(1){
   text-align: left;
+  padding-left: 15px;
+  color: #97dbf4;
 }
 .buttons{
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin-bottom: -16px;
-  padding-right: 24px;
+  padding-right: 16px;
   gap: 5px;
 }
 .delete-button,
@@ -50,5 +100,5 @@ body{
   color: rgba(255, 0, 0, 0.826);
 }
 .edit-button{
-  color: rgb(0, 224, 0);
+  color: #97dbf4;
 }
