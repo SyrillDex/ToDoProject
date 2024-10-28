@@ -69,16 +69,26 @@ body{
 }
 .task-input-buttons button{
   background-color: transparent;
-  border: 1px solid gray;
+  border: 2px solid gray;
   padding: 10px 8px;
   width: 70px;
   border-radius: 10px;
 }
 .add-button{
   color: #97dbf4;
+  transition: all ease-in-out .25s;
+}
+.add-button:hover{
+  background-color: #97dbf4;
+  color: #121212;
 }
 .clear-button{
-  color: rgba(255, 0, 0, 0.826);
+  color: #FFD43B;
+  transition: all ease-in-out .25s;
+}
+.clear-button:hover{
+  background-color: #FFD43B;
+  color: #121212;
 }
 .task-title{
   margin: 0px 20px;
@@ -108,26 +118,38 @@ body{
   gap: 5px;
   position: absolute;
   right: 0px;
-  top: -34px;
+  top: -36px;
   transition: all ease-in-out 0.25s;
 }
 .delete-button,
 .edit-button{
   background-color: #121212;
-  border: 1px solid gray;
+  border: 2px solid gray;
   border-bottom: none;
   padding: 8px 10px;
   width: 70px;
   border-radius: 10px 10px 0px 0px;
-  color: rgba(255, 0, 0, 0.826);
 }
 .edit-button{
   color: #97dbf4;
+  transition: all ease-in-out .25s;
+}
+.edit-button:hover{
+  background-color: #97dbf4;
+  color: #121212;
+}
+.delete-button{
+  color: #FFD43B;
+  transition: all ease-in-out .25s;
+}
+.delete-button:hover{
+  background-color: #FFD43B;
+  color: #121212;
 }
 .tasks:hover{
-  background-color: #97dbf4;
-  color: black;
+  color: #FFD43B;
   transform: scale(1.01);
+  border: 2px solid #FFD43B;
 }
 .tasks:hover .buttons {
   display: flex;
