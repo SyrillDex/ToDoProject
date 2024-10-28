@@ -18,20 +18,18 @@ function renderTasksList(){
     const taskObject = tasksList[i];
     const { name, dueDate, time} = taskObject;
     const html = `
+      <div class="buttons">
+        <button class="edit-button">
+          Edit
+        </button>
+        <button onclick="deleteTask(${i})" class="delete-button">
+          Delete
+        </button>
+      </div>
       <div class="tasks">
-        <div>
-          <input type="checkbox" name="taskName" id="taskName">
-          <label for="taskName">${name}</label>
-        </div>
-        <div> ${dueDate} </div>
-        <div> ${time} </div>
-        <div>
-          <button onclick="
-          tasksList.splice(${i}, 1);
-          saveTasksToLocalStorage();
-          renderTasksList();
-          ">Delete</button>
-        </div>
+        <p>${name}</p>
+        <p>${dueDate} </p>
+        <p>${time}</p>
       </div>
       `;
     tasksHTML += html;
@@ -82,4 +80,9 @@ function addToInput(){
 }
 function saveTasksToLocalStorage() {
   localStorage.setItem('tasksList', JSON.stringify(tasksList));
+}
+function deleteTask(index){
+  tasksList.splice(index, 1);
+  saveTasksToLocalStorage();
+  renderTasksList();
 }
