@@ -19,6 +19,7 @@ function renderTasksList(){
     const taskObject = tasksList[i];
     const { name, dueDate, time} = taskObject;
     const html = `
+      <div class="tasks">
       <div class="buttons">
         <button onclick="editTask(${i})" class="edit-button">
           Edit
@@ -27,7 +28,6 @@ function renderTasksList(){
           Delete
         </button>
       </div>
-      <div class="tasks">
         <p>${name}</p>
         <p>${dueDate} </p>
         <p>${time}</p>

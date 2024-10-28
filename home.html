@@ -16,14 +16,15 @@
   <div class="welcome-mess"></div>
   <div class="task-input-div">
     <input placeholder="Your task here" class="task-input" maxlength="50">
+    <p class="name-label">Please input task name, date, and time.</p>
     <input type="date" class="js-duedate-input">
     <input type="time" class="js-time-input">
   </div>
   <div class="task-input-buttons">
-    <button onclick="addToInput();">Add</button>
-    <button>Clear all</button>
+    <button onclick="addToInput();" class="add-button">Add</button>
+    <button class="clear-button">Clear all</button>
   </div>
-  <h2>Tasks</h2>
+  <h2 class="task-title">Tasks</h2>
   <div class="js-tasks">
   </div>
 

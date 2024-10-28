@@ -41,12 +41,8 @@ body{
   display: flex;
   margin: 15px;
   gap: 5px;
+  position: relative;
 }
-/* @media (max-width: 400px){
-  .task-input-div{
-    flex-direction: column;
-  }
-} */
 .task-input-div input{
   background-color: transparent;
   border: 1px solid white;
@@ -57,10 +53,36 @@ body{
 .task-input-div input:nth-child(1){
   width: 80%;
 }
+.name-label,
+.date-label,
+.time-label{
+  position: absolute;
+  bottom: -20px;
+  font-size: 0.7rem;
+}
 .task-input-buttons{
   display: flex;
   justify-content: flex-end;
   margin-right: 20px;
+  margin-top: 24px;
+  gap: 5px;
+}
+.task-input-buttons button{
+  background-color: transparent;
+  border: 1px solid gray;
+  padding: 10px 8px;
+  width: 70px;
+  border-radius: 10px;
+}
+.add-button{
+  color: #97dbf4;
+}
+.clear-button{
+  color: rgba(255, 0, 0, 0.826);
+}
+.task-title{
+  margin: 0px 20px;
+  font-weight: lighter;
 }
 .tasks{
   display: grid;
@@ -70,8 +92,9 @@ body{
   border-radius: 0px 0px 10px 10px;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
   text-align: center;
+  transition: all ease-in-out 0.25s;
+  position: relative;
 }
 .tasks p{
   padding: 10px 5px;
@@ -79,19 +102,17 @@ body{
 .tasks p:nth-child(1){
   text-align: left;
   padding-left: 15px;
-  color: #97dbf4;
 }
 .buttons{
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-bottom: -16px;
-  padding-right: 16px;
+  display: none;
   gap: 5px;
+  position: absolute;
+  right: 0px;
+  top: -34px;
 }
 .delete-button,
 .edit-button{
-  background-color: transparent;
+  background-color: #121212;
   border: 1px solid gray;
   border-bottom: none;
   padding: 8px 10px;
@@ -101,4 +122,12 @@ body{
 }
 .edit-button{
   color: #97dbf4;
+}
+.tasks:hover{
+  background-color: #97dbf4;
+  color: black;
+  transform: scale(1.01);
+}
+.tasks:hover .buttons {
+  display: flex;
 }
