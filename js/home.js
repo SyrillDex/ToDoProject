@@ -1,7 +1,7 @@
 let tasksList = JSON.parse(localStorage.getItem('tasksList')) || [{
   name: "Eg. Hire an employee",
   dueDate: "Eg. 2024-10-27",
-  time: "00:00"
+  time: "07:00"
 }];
 
 welcomeUser();
@@ -28,7 +28,7 @@ function renderTasksList(){
           Delete
         </button>
       </div>
-        <p>${name}</p>
+        <p class="js-task-name">${name}</p>
         <p>${dueDate} </p>
         <p>${time}</p>
       </div>
@@ -109,6 +109,11 @@ function welcomeUser(){
   welcomeHTML += html;
   
   document.querySelector('.welcome-mess').innerHTML = welcomeHTML;
+}
+
+function clearTasks(){
+  localStorage.removeItem('tasksList');
+  window.location.reload();
 }
 
 
