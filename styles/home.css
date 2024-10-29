@@ -147,9 +147,9 @@ body{
   color: #121212;
 }
 .tasks:hover{
-  color: #FFD43B;
+  color: #97dbf4;
   transform: scale(1.01);
-  border: 2px solid #FFD43B;
+  border: 2px solid #97dbf4;
 }
 .tasks:hover .buttons {
   display: flex;
