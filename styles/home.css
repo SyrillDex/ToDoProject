@@ -36,6 +36,7 @@ body{
 }
 .welcome-mess em{
   color: #97dbf4;
+  font-weight:300;
 }
 .task-input-div{
   display: flex;
