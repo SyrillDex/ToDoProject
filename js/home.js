@@ -15,7 +15,7 @@ function renderTasksList(){
   `;
   let isEmpty = true;
 
-  tasksList.forEach(function(taskObject, index){
+  tasksList.forEach((taskObject, index) =>{
     const { name, dueDate, time} = taskObject;
     const html = `
       <div class="tasks">
