@@ -15,16 +15,15 @@ function renderTasksList(){
   `;
   let isEmpty = true;
 
-  for(let i = 0; i < tasksList.length; i++){
-    const taskObject = tasksList[i];
+  tasksList.forEach(function(taskObject, index){
     const { name, dueDate, time} = taskObject;
     const html = `
       <div class="tasks">
       <div class="buttons">
-        <button onclick="editTask(${i})" class="edit-button">
+        <button onclick="editTask(${index})" class="edit-button">
           Edit
         </button>
-        <button onclick="deleteTask(${i})" class="delete-button">
+        <button onclick="deleteTask(${index})" class="delete-button">
           Delete
         </button>
       </div>
@@ -34,7 +33,7 @@ function renderTasksList(){
       </div>
       `;
     tasksHTML += html;
-  }
+  });
   document.querySelector('.js-tasks').innerHTML = tasksHTML;
 
   if(tasksList.length > 0){
