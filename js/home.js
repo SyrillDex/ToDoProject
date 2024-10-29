@@ -20,10 +20,10 @@ function renderTasksList(){
     const html = `
       <div class="tasks">
       <div class="buttons">
-        <button onclick="editTask(${index})" class="edit-button">
+        <button class="edit-button">
           Edit
         </button>
-        <button onclick="deleteTask(${index})" class="delete-button">
+        <button class="delete-button">
           Delete
         </button>
       </div>
@@ -36,6 +36,30 @@ function renderTasksList(){
   });
   document.querySelector('.js-tasks').innerHTML = tasksHTML;
 
+  document.querySelectorAll('.delete-button')
+    .forEach((deleteButton, index) =>{
+      deleteButton.addEventListener('click', () =>{
+        tasksList.splice(index, 1);
+        saveTasksToLocalStorage();
+        renderTasksList();
+      });
+    });
+
+  document.querySelectorAll('.edit-button')
+    .forEach((editButton,index) =>{
+      editButton.addEventListener('click', () =>{
+        const item = tasksList[index];
+        let inputElement = document.querySelector('.task-input');
+        let dateInput = document.querySelector('.js-duedate-input');
+        let timeInput = document.querySelector('.js-time-input');
+      
+        inputElement.value = item.name;
+        dateInput.value = item.date;
+        timeInput.value = item.time;
+        deleteTask(index);
+      })
+    })
+
   if(tasksList.length > 0){
     isEmpty = false;
     document.querySelector('.default-tasks').style.display = "none";
@@ -44,6 +68,9 @@ function renderTasksList(){
     document.querySelector('.default-tasks').style.display = "flex";
   }
 }
+document.querySelector('.add-button').addEventListener('click', () =>{
+  addToInput();
+});
 function addToInput(){
   const inputElement = document.querySelector('.task-input');
   const name = inputElement.value;
@@ -78,24 +105,14 @@ function addToInput(){
     pushDataToArray(dueDate,time);
   }
 }
+const inputElement = document.querySelector('.task-input');
+inputElement.addEventListener('keydown', (event)=>{
+  if(event.key === 'Enter'){
+    addToInput();
+  }
+});
 function saveTasksToLocalStorage() {
   localStorage.setItem('tasksList', JSON.stringify(tasksList));
-}
-function deleteTask(index){
-  tasksList.splice(index, 1);
-  saveTasksToLocalStorage();
-  renderTasksList();
-}
-function editTask(index){
-  const item = tasksList[index];
-  let inputElement = document.querySelector('.task-input');
-  let dateInput = document.querySelector('.js-duedate-input');
-  let timeInput = document.querySelector('.js-time-input');
-
-  inputElement.value = item.name;
-  dateInput.value = item.date;
-  timeInput.value = item.time;
-  deleteTask(index);
 }
 function welcomeUser(){
   let welcomeUser = JSON.parse(localStorage.getItem('username')) || "Guest";
@@ -109,7 +126,9 @@ function welcomeUser(){
   
   document.querySelector('.welcome-mess').innerHTML = welcomeHTML;
 }
-
+document.querySelector('.clear-button').addEventListener('click', () =>{
+  clearTasks();
+})
 function clearTasks(){
   localStorage.removeItem('tasksList');
   window.location.reload();

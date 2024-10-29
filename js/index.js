@@ -6,3 +6,10 @@ function addUsername(){
   usernameInput.value = "";
   window.location.href = "home.html"
 }
+
+const usernameInput = document.querySelector('.username');
+usernameInput.addEventListener('keydown', (event)=>{
+  if(event.key === 'Enter'){
+    addUsername();
+  }
+});
