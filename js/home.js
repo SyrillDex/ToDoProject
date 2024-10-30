@@ -39,9 +39,7 @@ function renderTasksList(){
   document.querySelectorAll('.delete-button')
     .forEach((deleteButton, index) =>{
       deleteButton.addEventListener('click', () =>{
-        tasksList.splice(index, 1);
-        saveTasksToLocalStorage();
-        renderTasksList();
+        deleteTask(index);
       });
     });
 
@@ -57,8 +55,13 @@ function renderTasksList(){
         dateInput.value = item.date;
         timeInput.value = item.time;
         deleteTask(index);
-      })
-    })
+      });
+    });
+  function deleteTask(index){
+    tasksList.splice(index, 1);
+    saveTasksToLocalStorage();
+    renderTasksList();
+  }
 
   if(tasksList.length > 0){
     isEmpty = false;
