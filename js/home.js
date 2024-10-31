@@ -21,15 +21,15 @@ function renderTasksList(){
       <div class="tasks">
       <div class="buttons">
         <button class="edit-button">
-          Edit
+          <i class="fa-regular fa-pen-to-square"></i>
         </button>
         <button class="delete-button">
-          Delete
+          <i class="fa-solid fa-trash"></i>
         </button>
       </div>
         <p class="js-task-name">${name}</p>
-        <p>${dueDate} </p>
-        <p>${time}</p>
+        <p><i class="fa-regular fa-calendar-days"></i> ${dueDate} </p>
+        <p><i class="fa-regular fa-clock"></i> ${time}</p>
       </div>
       `;
     tasksHTML += html;
