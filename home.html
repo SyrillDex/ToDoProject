@@ -8,27 +8,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" 
   rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <title>To Do List with JavaScript</title>
   <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
   <div class="welcome-mess"></div>
+  <!--Continer for inputs-->
   <div class="task-input-div">
-    <input placeholder="Your task here" class="task-input" maxlength="50">
+    <!--Task name input-->
+    <input placeholder="Your task here" class="task-input" maxlength="60">
     <p class="name-label">Please input task name, date, and time.</p>
+    <!--Date and time Input-->
     <input type="date" class="js-duedate-input">
     <input type="time" class="js-time-input">
   </div>
+  <!--Container for buttons-->
   <div class="task-input-buttons">
     <button class="add-button">Add</button>
     <button class="clear-button">Reset</button>
   </div>
   <h2 class="task-title">Tasks To-do</h2>
+  <!--Containter for Tasks List-->
   <div class="js-tasks">
   </div>
 
+  <!--Script for home.html-->
   <script src="js/home.js"></script>
-  <script src="js/index.js"></script>
 </body>
 </html>
