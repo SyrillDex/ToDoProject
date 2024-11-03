@@ -59,9 +59,7 @@ body{
 .task-input-div input:nth-child(1){
   width: 80%;
 }
-.name-label,
-.date-label,
-.time-label{
+.name-label{
   position: absolute;
   bottom: -20px;
   font-size: 0.7rem;
@@ -79,6 +77,7 @@ body{
   padding: 10px 8px;
   width: 70px;
   border-radius: 10px;
+  cursor: pointer;
 }
 .add-button{
   color: #97dbf4;
@@ -110,6 +109,7 @@ body{
   justify-content: space-between;
   transition: all ease-in-out 0.25s;
   position: relative;
+  cursor: pointer;
 }
 .tasks p{
   padding: 10px 5px;
@@ -123,7 +123,7 @@ body{
   gap: 5px;
   position: absolute;
   right: 0px;
-  top: -36px;
+  top: -35px;
   transition: all ease-in-out 0.25s;
 }
 .delete-button,
@@ -134,6 +134,7 @@ body{
   padding: 8px 10px;
   width: 70px;
   border-radius: 10px 10px 0px 0px;
+  cursor: pointer;
 }
 .edit-button{
   color: #97dbf4;
